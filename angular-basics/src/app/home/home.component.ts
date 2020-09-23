@@ -9,9 +9,7 @@ export class HomeComponent implements OnInit {
   clickCounter: number = 0;
   name: string = '';
 
-  constructor() {
-
-  }
+  constructor() {}
 
   ngOnInit() {}
 
@@ -21,5 +19,13 @@ export class HomeComponent implements OnInit {
   
   resetCounter() {
     this.clickCounter = 0;
+  }
+
+  setClasses() {
+    let myClasses =  {
+      active: this.clickCounter > 4,
+      notactive : this.clickCounter <= 4
+    }
+    return myClasses
   }
 }
