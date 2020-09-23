@@ -6,10 +6,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  clickCounter: number = 0;
+  name: string = '';
 
-  constructor() { }
+  constructor() {
+
+  }
 
   ngOnInit(): void {
   }
 
+  countClick() {
+    this.clickCounter += 1;
+  }
+  
+  resetCounter() {
+    this.clickCounter = 0;
+  }
 }

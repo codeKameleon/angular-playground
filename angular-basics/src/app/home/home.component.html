@@ -1,1 +1,34 @@
 <h1>Home</h1>
+
+<div class="play-container">
+    <button class="countButton" (click)="countClick()">
+        You've clicked 
+        <span>this</span>
+    </button>
+    
+    <span> {{ clickCounter }} times</span>
+
+    <div>
+        <button class="resetButton" (click)="resetCounter()">
+            Reset counter
+        </button>
+    </div>
+</div>
+
+<div class="play-container">
+    <p>
+        <input type="text" [(ngModel)]="name">
+        <br>
+        <strong> You said : </strong> {{ name }}
+    </p>
+</div>
+
+<div class="play-container">
+    <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
+        <p>No more lick allowed !</p>
+    </ng-template>
+
+    <ng-template #none>
+       <p> Keep on clicking </p> 
+    </ng-template>
+</div>
