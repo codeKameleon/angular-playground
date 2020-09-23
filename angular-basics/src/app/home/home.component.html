@@ -17,18 +17,23 @@
 
 <div class="play-container">
     <p>
-        <input type="text" [(ngModel)]="name">
+        <input type="text" [ngModel]="name">
         <br>
         <strong> You said : </strong> {{ name }}
     </p>
 </div>
 
-<div class="play-container">
+<div 
+    class="play-container"
+    [ngStyle]="{
+        'color': '#fff',
+        'background-color' : clickCounter > 4 ? 'mediumseagreen' : 'crimson'
+    }">
     <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
-        <p>No more lick allowed !</p>
+        <p>The click counter <strong>IS GREATER</strong> than 4</p>
     </ng-template>
 
     <ng-template #none>
-       <p> Keep on clicking </p> 
+       <p> The click counter is <strong>NOT GREATER</strong> than 4</p> 
     </ng-template>
 </div>
