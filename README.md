@@ -166,7 +166,7 @@ export class HomeComponent implements OnInit {
 
 <div class="play-container">
     <p>
-        <input type="text" [ngModel]="name">
+        <input type="text" [(ngModel)]="name">
         <br>
         <strong> You said : </strong> {{ name }}
     </p>
